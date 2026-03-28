@@ -22,17 +22,21 @@
                 <h1 class="logo">Online Store</h1>
             </div>
             <nav class="navbar">
-                <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>index.php">Home</a>
-                <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>products.php">Products</a>
+                <?php
+                    $is_admin_page = strpos($_SERVER['PHP_SELF'], '/admin/') !== false;
+                    $base_url = $is_admin_page ? '../' : '';
+                ?>
+                <a href="<?php echo $base_url; ?>index.php">Home</a>
+                <a href="<?php echo $base_url; ?>products.php">Products</a>
                 <?php if (is_logged_in()): ?>
-                    <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>dashboard.php">Dashboard</a>
+                    <a href="<?php echo $base_url; ?>dashboard.php">Dashboard</a>
                     <?php if (is_admin()): ?>
-                        <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>admin/index.php">Admin Panel</a>
+                        <a href="<?php echo $base_url; ?>admin/index.php">Admin Panel</a>
                     <?php endif; ?>
-                    <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>logout.php">Logout (<?php echo $_SESSION['username']; ?>)</a>
+                    <a href="<?php echo $base_url; ?>logout.php">Logout (<?php echo $_SESSION['username']; ?>)</a>
                 <?php else: ?>
-                    <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>register.php">Register</a>
-                    <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>login.php">Login</a>
+                    <a href="<?php echo $base_url; ?>register.php">Register</a>
+                    <a href="<?php echo $base_url; ?>login.php">Login</a>
                 <?php endif; ?>
             </nav>
         </div>

@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /Assignment2/
+    
+    # If the requested file or directory does not exist
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Rewrite to index.php
+    RewriteRule ^(.*)$ index.php [L]
+</IfModule>
+
+# Allow direct access to files and directories
+Options +Indexes
+DirectoryIndex index.php

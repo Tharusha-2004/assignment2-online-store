@@ -1,0 +1,9 @@
+<svg width="200" height="150" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="150" fill="#f0f0f0"/>
+  <rect x="30" y="60" width="140" height="20" rx="10" fill="#333" stroke="#555" stroke-width="1"/>
+  <rect x="25" y="55" width="15" height="30" fill="#888" stroke="#555" stroke-width="1"/>
+  <rect x="160" y="55" width="15" height="30" fill="#888" stroke="#555" stroke-width="1"/>
+  <rect x="28" y="58" width="9" height="24" fill="#999"/>
+  <rect x="163" y="58" width="9" height="24" fill="#999"/>
+  <text x="100" y="150" font-size="14" font-family="Arial" text-anchor="middle" fill="#333">USB Cable</text>
+</svg>

@@ -18,22 +18,22 @@
 <header>
     <div class="container">
         <div class="header-content">
-            <h1 class="logo">Online Store</h1>
+            <div class="logo-section">
+                <h1 class="logo">Online Store</h1>
+            </div>
             <nav class="navbar">
-                
-                    <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>index.php">Home</a>
-                    <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>products.php">Products</a>
-                    <?php if (is_logged_in()): ?>
-                        <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>dashboard.php">Dashboard</a>
-                        <?php if (is_admin()): ?>
-                            <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>admin/index.php">Admin Panel</a>
-                        <?php endif; ?>
-                        <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>logout.php">Logout (<?php echo $_SESSION['username']; ?>)</a>
-                    <?php else: ?>
-                        <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>register.php">Register</a>
-                        <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>login.php">Login</a>
+                <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>index.php">Home</a>
+                <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>products.php">Products</a>
+                <?php if (is_logged_in()): ?>
+                    <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>dashboard.php">Dashboard</a>
+                    <?php if (is_admin()): ?>
+                        <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>admin/index.php">Admin Panel</a>
                     <?php endif; ?>
-                
+                    <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>logout.php">Logout (<?php echo $_SESSION['username']; ?>)</a>
+                <?php else: ?>
+                    <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>register.php">Register</a>
+                    <a href="<?php echo dirname($_SERVER['PHP_SELF']) === '/' ? '/' : dirname($_SERVER['PHP_SELF']) . '/'; ?>login.php">Login</a>
+                <?php endif; ?>
             </nav>
         </div>
     </div>

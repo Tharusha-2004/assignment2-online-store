@@ -23,7 +23,7 @@ if ($conn->query($users_table) === TRUE) {
 // Create products table
 $products_table = "CREATE TABLE IF NOT EXISTS products (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(200) NOT NULL,
+    name VARCHAR(200) UNIQUE NOT NULL,
     description TEXT,
     price DECIMAL(10, 2) NOT NULL,
     quantity INT DEFAULT 0,
@@ -72,11 +72,11 @@ if ($conn->query($insert_admin) === TRUE) {
 
 // Insert sample products with images
 $sample_products = [
-    ['Laptop', 'High-performance laptop for work and gaming', 1200.00, 10, 'Electronics', 'assets/images/laptop.png'],
-    ['Smartphone', 'Latest smartphone with advanced features', 800.00, 15, 'Electronics', 'assets/images/smartphone.jpg'],
-    ['Tablet', 'Portable tablet for reading and browsing', 450.00, 8, 'Electronics', 'assets/images/tablet.jpg'],
-    ['Headphones', 'Noise-cancelling wireless headphones', 150.00, 20, 'Accessories', 'assets/images/headset.png'],
-    ['USB Cable', 'High-speed USB-C charging cable', 15.00, 50, 'Accessories', 'assets/images/usb.png'],
+    ['Laptop', 'High-performance laptop for work and gaming', 1200.00, 10, 'Electronics', 'assets/images/laptop.svg'],
+    ['Smartphone', 'Latest smartphone with advanced features', 800.00, 15, 'Electronics', 'assets/images/phone.svg'],
+    ['Tablet', 'Portable tablet for reading and browsing', 450.00, 8, 'Electronics', 'assets/images/tablet.svg'],
+    ['Headphones', 'Noise-cancelling wireless headphones', 150.00, 20, 'Accessories', 'assets/images/headphones.svg'],
+    ['USB Cable', 'High-speed USB-C charging cable', 15.00, 50, 'Accessories', 'assets/images/usb-cable.svg'],
 ];
 
 foreach ($sample_products as $product) {
@@ -92,6 +92,8 @@ foreach ($sample_products as $product) {
 
 echo "<br><strong>Database initialization complete!</strong><br>";
 echo "Admin Login: username=<strong>admin</strong>, password=<strong>admin123</strong>";
+echo "<br><br><strong>⚠️ Note: This page should only be run once during initial setup.</strong><br>";
+echo "Running this again will not duplicate products due to UNIQUE constraints.<br>";
 
 $conn->close();
 ?>

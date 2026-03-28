@@ -72,11 +72,11 @@ if ($conn->query($insert_admin) === TRUE) {
 
 // Insert sample products with images
 $sample_products = [
-    ['Laptop', 'High-performance laptop for work and gaming', 1200.00, 10, 'Electronics', 'assets/images/laptop.svg'],
-    ['Smartphone', 'Latest smartphone with advanced features', 800.00, 15, 'Electronics', 'assets/images/phone.svg'],
-    ['Tablet', 'Portable tablet for reading and browsing', 450.00, 8, 'Electronics', 'assets/images/tablet.svg'],
-    ['Headphones', 'Noise-cancelling wireless headphones', 150.00, 20, 'Accessories', 'assets/images/headphones.svg'],
-    ['USB Cable', 'High-speed USB-C charging cable', 15.00, 50, 'Accessories', 'assets/images/usb-cable.svg'],
+    ['Laptop', 'High-performance laptop for work and gaming', 1200.00, 10, 'Electronics', 'assets/images/laptop.png'],
+    ['Smartphone', 'Latest smartphone with advanced features', 800.00, 15, 'Electronics', 'assets/images/smartphone.jpg'],
+    ['Tablet', 'Portable tablet for reading and browsing', 450.00, 8, 'Electronics', 'assets/images/tablet.jpg'],
+    ['Headphones', 'Noise-cancelling wireless headphones', 150.00, 20, 'Accessories', 'assets/images/headset.png'],
+    ['USB Cable', 'High-speed USB-C charging cable', 15.00, 50, 'Accessories', 'assets/images/usb.png'],
 ];
 
 foreach ($sample_products as $product) {

@@ -1,4 +1,9 @@
+<?php
+include('includes/auth.php');
+include('includes/header.php');
 
+$products = get_all_products();
+?>
 
 <div class="container">
     <h2>Welcome to Online Store</h2>

@@ -1,4 +1,4 @@
-# Online Store - Assignment 2
+# Online Store 
 
 A fully functional dynamic website for an online store built with PHP, MySQL, and HTML/CSS.
 
